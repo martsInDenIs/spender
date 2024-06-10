@@ -7,3 +7,14 @@ export async function getTransactions(): Promise<Transaction[]> {
 
   return await data.json();
 }
+
+export async function getTransactionById(transactionId: number): Transaction {
+  const data = await fetch(
+    `http://localhost:3000/transactions/${transactionId}`,
+    {
+      cache: "force-cache",
+    }
+  );
+
+  return data.json();
+}

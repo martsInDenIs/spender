@@ -25,6 +25,7 @@ const Layout: React.FC<Props> = ({
         <main className='flex flex-row flex-1 bg-3 p-4 h-40 gap-2'>
             <span className='flex-1'>{children}</span>
             <span className='flex-1'>{role === ROLE.PARENT ? parent : child}</span>
+
             {modal}
             <div id="modal-root" />
         </main>
