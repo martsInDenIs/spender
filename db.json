@@ -1,0 +1,101 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "description": "First transaction",
+      "price": "150$"
+    },
+    {
+      "id": "2",
+      "description": "Second transaction",
+      "price": "30$"
+    },
+    {
+      "id": "3",
+      "description": "Blank transaction",
+      "price": "50$"
+    },
+    {
+      "id": "4",
+      "description": "Blank transaction",
+      "price": "50$"
+    },
+    {
+      "id": "5",
+      "description": "Blank transaction",
+      "price": "50$"
+    },
+    {
+      "id": "6",
+      "description": "Blank transaction",
+      "price": "50$"
+    },
+    {
+      "id": "7",
+      "description": "Blank transaction",
+      "price": "50$"
+    },
+    {
+      "id": "8",
+      "description": "Last transaction",
+      "price": "250$"
+    }
+  ],
+
+  "requests": [
+    {
+      "id": "1",
+      "description": "Request 1!",
+      "price": "10$",
+
+      "allowed": false,
+      "decided": false,
+      "executed": false
+    },
+    {
+      "id": "2",
+      "description": "Request 2!",
+      "price": "20$",
+
+      "allowed": false,
+      "decided": false,
+      "executed": false
+    },
+    {
+      "id": "3",
+      "description": "Request 3!",
+      "price": "30$",
+
+      "allowed": false,
+      "decided": false,
+      "executed": false
+    },
+    {
+      "id": "4",
+      "description": "Request 4!",
+      "price": "40$",
+
+      "allowed": false,
+      "decided": false,
+      "executed": false
+    },
+    {
+      "id": "5",
+      "description": "Request 5!",
+      "price": "50$",
+
+      "allowed": false,
+      "decided": false,
+      "executed": false
+    },
+    {
+      "id": "6",
+      "description": "Request 6!",
+      "price": "60$",
+
+      "allowed": false,
+      "decided": false,
+      "executed": false
+    }
+  ]
+}
