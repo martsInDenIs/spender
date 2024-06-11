@@ -12,7 +12,7 @@ export function middleware(req: NextRequest, res: NextResponse) {
     }
 
     url.pathname = "/login";
-    return NextResponse.redirect(new NextURL('/login',req.nextUrl));
+    return NextResponse.redirect(new NextURL("/login", req.nextUrl), );
   }
 
   if (hasRole && req.nextUrl.pathname === "/login") {
@@ -24,5 +24,5 @@ export function middleware(req: NextRequest, res: NextResponse) {
 }
 
 export const config = {
-  matcher: '/((?!api|_next/static|_next/image|favicon.ico).*)',
-}
+  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+};
