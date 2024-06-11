@@ -8,7 +8,7 @@ export async function getTransactions(): Promise<Transaction[]> {
   return await data.json();
 }
 
-export async function getTransactionById(transactionId: number): Transaction {
+export async function getTransactionById(transactionId: number): Promise<Transaction> {
   const data = await fetch(
     `http://localhost:3000/transactions/${transactionId}`,
     {
