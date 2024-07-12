@@ -7,7 +7,7 @@ import { createTransaction } from "../transactions";
 import { getRequests } from "@/lib/api/requests/api";
 
 export async function executeRequest(requestId: string) {
-  const request = (await getRequests()).find(({ id }) => id === requestId);
+  const request = (await getRequests())?.find(({ id }) => id === requestId);
 
   if (!request) {
     console.error(`Request with ${requestId} doesn't exist!`);

@@ -17,7 +17,7 @@ export default async function Page() {
                 <hr />
             </div>
             <List listEmptyPlaceholder={<p className="empty-list-placeholder">{t('components.list.emptyPlaceholder')}</p>}>
-                {acceptedRequests.map(req => <AcceptedRequest {...req} key={req.id} />)}
+                {acceptedRequests?.map(req => <AcceptedRequest {...req} key={req.id} />)}
             </List>
         </section>
         <section className="flex flex-col flex-1 w-full bg-4 rounded-md p-4">
@@ -26,7 +26,7 @@ export default async function Page() {
                 <hr />
             </div>
             <List listEmptyPlaceholder={<p className="empty-list-placeholder">{t('components.list.emptyPlaceholder')}</p>}>
-                {rejectedRequests.map(req => <RejectedRequest {...req} key={req.id} />)}
+                {rejectedRequests?.map(req => <RejectedRequest {...req} key={req.id} />)}
             </List>
         </section>
     </div>

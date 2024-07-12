@@ -14,7 +14,7 @@ export default async function Page() {
             <hr />
         </div>
         <List listEmptyPlaceholder={<p className="empty-list-placeholder">{t('components.list.emptyPlaceholder')}</p>}>
-            {requests.map((request) => <DecideRequest {...request} key={request.id} />)}
+            {requests?.map((request) => <DecideRequest {...request} key={request.id} />)}
         </List>
     </section>
 }

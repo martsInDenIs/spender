@@ -14,7 +14,7 @@ export default function AcceptedRequest({ description, price, id }: Props) {
 
     const buttons = useMemo(() => [
         <Button onClick={() => executeRequest(id)} className='bg-green-600 hover:bg-green-500 w-full' key={'buy'}>{t('buy')}</Button>
-    ], [id]);
+    ], [id, t]);
 
     return <Request buttons={buttons} description={description} price={price} />
 }

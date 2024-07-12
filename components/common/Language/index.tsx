@@ -28,7 +28,7 @@ export default function Language({ className, lang }: Props) {
         defaultValue: options.find((item) => item.value === lang) ?? null,
         options,
         onChange: (newValue) => newValue && handleSelect(newValue.value),
-    }), [lang])
+    }), [lang, handleSelect])
 
     return <Select
         {...selectProps}

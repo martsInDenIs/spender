@@ -15,7 +15,7 @@ export default function RejectedRequest({ description, price, id }: Props) {
     const buttons = useMemo(() => [
         <Button onClick={() => updateRequest(id, { decided: false })} className='bg-slate-500 hover:bg-slate-400' key="tryAgain">{t('ask_again')}</Button>,
         <Button onClick={() => executeRequest(id)} className='bg-red-700 hover:bg-red-600' key="stillBuy">{t('still_buy')}</Button>],
-        [id]
+        [id, t]
     );
 
     return <Request buttons={buttons} description={description} price={price} />
