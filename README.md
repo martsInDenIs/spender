@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spender
 
-## Getting Started
+Small funny project to extend my knowledge in NextJS and present me and my knowledge in JS, React etc.
 
-First, run the development server:
+## What is it about?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+You can choose one of two roles - sugar daddy/mummy or their partner. Depending on the role you choose, you will have access to certain functionality
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 1. Sugar
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can view transactions and decide whether to allow your partner to make a certain purchase or not.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### 1. Partner
 
-## Learn More
+Can view transactions and react to sugar daddy/mommy's decision to "complete" the purchase if the request is approved. Or ask again if the request was rejected. And of course, a rejected request still has the "complete purchase" function. You know. BECAUSE.
 
-To learn more about Next.js, take a look at the following resources:
+## How to run?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+After you clone the project you shold complete next steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. Install packages with `npm install` (The version of Node used is 20)
+2. Create a copy of the file `db.json.example` in a new file named `db.json` in the root
+3. Run in one terminal command `npm run mocked-server`
+4. Create a copy of the file `.env.example` in a new file named `.env` in the root. Set the `BASE_API_URL` and `NEXT_PUBLIC_BASE_API_URL` variables to the URL of the json-server
+5. and in another terminal command `npm run dev` or `npm run build && npm start`
 
-## Deploy on Vercel
+## Algorithm to check functionality
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To check main functions i propose you to execute the algorithm below:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Select the role of "Sugar Partner"
+2. Click on the "Create a new request" button and fill out the form
+3. Log out and change the role to "Sugar Daddy/Mommy"
+4. Accept or reject the request.
+5. Log out again and change your role to "Sugar Partner"
+6. Make a final decision on the request
+
+## Improvements for the future
+
+1. Cover the functionality with tests
+2. Create a responsive design (for small screens/mobile devices)
+3. Add success/failure notifications when creating/executing requests
+4. Containerise the application
+   ?. Create a BE using NestJS :)
+5. Make the application attractive for users with a slow internet connection (using the loading file, skeletons)
+6. I haven't figured it out yet ;)
