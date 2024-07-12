@@ -2,18 +2,25 @@
 
 import Button from '@/components/common/Button';
 import { useTranslations } from 'next-intl';
-import { useRouter } from 'next/navigation';
-import React from 'react';
+import Modal from '@/components/dashboard/sugarPartner/Modal';
+import { createPortal } from 'react-dom';
+import { useCallback, useState } from 'react';
 
-const CreateRequest: React.FC = () => {
+export default function CreateRequest() {
     const t = useTranslations('components.buttons');
-    const router = useRouter();
 
-    const handleClick = () => {
-        router.push('/requests/new');
-    };
+    const [doCreatePortal, setDoCreatePortal] = useState(false);
 
-    return <Button onClick={handleClick} className='hover:bg-slate-500 rounded-xl underline'>{t('new_request')}</Button>
+    const handleClick = useCallback(() => {
+        setDoCreatePortal(true);
+    }, []);
+
+    const handleDismiss = useCallback(() => {
+        setDoCreatePortal(false);
+    }, [])
+
+    return <>
+        <Button onClick={handleClick} className='hover:bg-slate-500 rounded-xl underline'>{t('new_request')}</Button>
+        {doCreatePortal && createPortal(<Modal handleDismiss={handleDismiss} />, document.getElementById('modal-root')!)}
+    </>
 }
-
-export default CreateRequest;
