@@ -10,8 +10,7 @@ export default async function Page() {
 
     return <section className='bg-4 h-full rounded-md text-white flex flex-col gap-6 p-4 pt-10 flex-1 h-full'>
         <div className='text-center flex flex-col gap-2'>
-            <h1 className='text-5xl'>{t('dashboard.transactions.header')}</h1>
-            <p className='text-3xl'>{t('dashboard.transactions.mocked_money')}</p>
+            <h1 className='text-5xl'>{t('transactions.header')}</h1>
             <hr />
         </div>
         <List listEmptyPlaceholder={<p className="empty-list-placeholder mt-20">{t('components.list.emptyPlaceholder')}</p>}>

@@ -12,10 +12,6 @@
         "header": "Transaction info"
       }
     },
-    "transactions": {
-      "header": "Your account`s money",
-      "mocked_money": "20.000$"
-    },
     "partner": {
       "requests": {
         "accepted": "Accepted requests",

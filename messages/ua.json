@@ -13,8 +13,7 @@
       }
     },
     "transactions": {
-      "header": "Гроші на вашому рахунку",
-      "mocked_money": "20.000$"
+      "header": "Гроші на вашому рахунку"
     },
     "partner": {
       "requests": {
