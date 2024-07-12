@@ -1,10 +1,9 @@
-import React from 'react';
-import { redirect } from 'next/navigation';
+import { getTranslations } from "next-intl/server";
 
-const NotFoundPage: React.FC = () => {
-    redirect('/dashboard');
+export default async function NotFound() {
+    const t = await getTranslations('notFound');
 
-    return null;
-};
-
-export default NotFoundPage;
+    return <div className="flex items-center justify-center w-full">
+        <p className="text-white text-5xl">{t('header')}</p>
+    </div>
+}

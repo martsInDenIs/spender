@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .empty-list-placeholder {
+    @apply text-4xl text-center mt-10 font-bold;
+  }
+}

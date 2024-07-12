@@ -1,11 +1,8 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
-const Layout: React.FC<Readonly<{
-    children: React.ReactNode
-}>> = ({
-    children
-}) => {
-        return <div className='flex justify-center mt-20'>{children}</div>;
-    };
+type Props = PropsWithChildren;
 
-export default Layout;
+export default function Layout({ children }: Props) {
+    return <div className='flex justify-center mt-20'>{children}</div>;
+};
+

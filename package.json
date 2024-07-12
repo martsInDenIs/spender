@@ -7,17 +7,19 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "mocked-server": "json-server --watch db.json"
+    "mocked-server": "json-server --watch -p=3001 db.json"
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "cookies-next": "^4.1.1",
-    "json-server": "^1.0.0-beta.1",
+    "country-flag-icons": "^1.5.13",
+    "json-server": "^0.17.4",
     "material-icons": "^1.13.12",
     "next": "14.2.3",
+    "next-intl": "^3.15.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.51.4"
+    "react-hook-form": "^7.51.4",
+    "react-select": "^5.8.0"
   },
   "devDependencies": {
     "@types/node": "^20",

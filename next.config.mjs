@@ -1,10 +1,16 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./i18n.ts");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    redirects: () => [{
-        source: "/",
-        destination: '/dashboard',
-        permanent: true
-    }]
+  redirects: () => [
+    {
+      source: "/",
+      destination: "/dashboard",
+      permanent: true,
+    },
+  ],
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

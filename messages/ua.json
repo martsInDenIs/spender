@@ -1,0 +1,81 @@
+{
+  "dashboard": {
+    "modal": {
+      "newRequest": {
+        "header": "Новий запит",
+        "form": {
+          "description": "Опис",
+          "price": "Вартість"
+        }
+      },
+      "transactionInfo": {
+        "header": "Інформація по транзакціях"
+      }
+    },
+    "transactions": {
+      "header": "Гроші на вашому рахунку",
+      "mocked_money": "20.000$"
+    },
+    "partner": {
+      "requests": {
+        "accepted": "Схвалені запити",
+        "rejected": "Відхилені запити"
+      }
+    },
+    "dm": {
+      "requests": "Запити партнера"
+    }
+  },
+  "transactions": {
+    "header": "Список транзакцій",
+    "transaction": {
+      "info": "Інформація по транзакціях"
+    }
+  },
+  "login": {
+    "header": "Оберіть вашу роль",
+    "form": {
+      "sugarDM": "Масік/Масінька",
+      "sugarPartner": "Партнер Масіка/Масіньки"
+    }
+  },
+  "requests": {
+    "sugarDM": {
+      "header": "Запити партнера"
+    },
+    "sugarPartner": {
+      "acceptSection": {
+        "header": "Список схвалених запитів"
+      },
+      "rejectSection": {
+        "header": "Список відхилених запитів"
+      }
+    }
+  },
+  "notFound": {
+    "header": "404 | Сторінку не знайдено."
+  },
+
+  "components": {
+    "links": {
+      "more": "більше"
+    },
+    "list": {
+      "emptyPlaceholder": "Список порожній!"
+    },
+    "buttons": {
+      "accept": "Прийняти",
+      "submit": "Підтвердити",
+      "ask_again": "Запитати знов :(",
+      "decline": "Відхилити",
+      "new_request": "Зробити новий запит!",
+      "buy": "Купити!",
+      "still_buy": "Всеодно купити!"
+    },
+    "navigation": {
+      "dashboard": "Дошка",
+      "transactions": "Транзакції",
+      "requests": "Запити"
+    }
+  }
+}

@@ -1,36 +1,23 @@
-import React from 'react';
-import { getCookie } from 'cookies-next';
-import { cookies } from 'next/headers'
-import { ROLE } from '@/app/types';
-import Header from '@/app/dashboard/components/Header';
-import Footer from '@/app/dashboard/components/Footer';
+import { PropsWithChildren, ReactNode } from "react"
+import { cookies } from "next/headers";
+import { ROLE } from "@/app/types";
 
-type Props = Readonly<{
-    children: React.ReactNode;
-    parent: React.ReactNode;
-    modal: React.ReactNode;
-    child: React.ReactNode;
+type Props = PropsWithChildren<{
+    modal: ReactNode,
+    sugarDM: ReactNode,
+    sugarPartner: ReactNode,
 }>
 
-const Layout: React.FC<Props> = ({
-    children,
-    parent,
-    modal,
-    child
-}) => {
-    const role = getCookie('role', { cookies });
+export default function Layout({ children, sugarDM, sugarPartner, modal }: Props) {
+    const role = cookies().get('role');
 
-    return <div className='w-full h-full m-auto flex flex-col rounded-xl overflow-hidden'>
-        <Header />
-        <main className='flex flex-row flex-1 bg-3 p-4 h-40 gap-2'>
-            <span className='flex-1'>{children}</span>
-            <span className='flex-1'>{role === ROLE.PARENT ? parent : child}</span>
+    return <>
+        <div className='flex flex-row gap-5 flex-1'>
+            {children}
+            {role && role.value === ROLE.CHILD ? sugarPartner : sugarDM}
+        </div>
 
-            {modal}
-            <div id="modal-root" />
-        </main>
-        <Footer />
-    </div>
-};
-
-export default Layout;
+        {modal}
+        <div id='modal-root' />
+    </>;
+}

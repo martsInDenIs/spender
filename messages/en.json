@@ -1,0 +1,81 @@
+{
+  "dashboard": {
+    "modal": {
+      "newRequest": {
+        "header": "Create new request",
+        "form": {
+          "description": "Description",
+          "price": "Price"
+        }
+      },
+      "transactionInfo": {
+        "header": "Transaction info"
+      }
+    },
+    "transactions": {
+      "header": "Your account`s money",
+      "mocked_money": "20.000$"
+    },
+    "partner": {
+      "requests": {
+        "accepted": "Accepted requests",
+        "rejected": "Rejected requests"
+      }
+    },
+    "dm": {
+      "requests": "Partners requests"
+    }
+  },
+  "transactions": {
+    "header": "Transaction list",
+    "transaction": {
+      "info": "Transactions info"
+    }
+  },
+  "login": {
+    "header": "Choise your role",
+    "form": {
+      "sugarDM": "Sugar Daddy/Mommy",
+      "sugarPartner": "Sugar Daddy`s/Mommy`s partner"
+    }
+  },
+  "requests": {
+    "sugarDM": {
+      "header": "Partner's requests"
+    },
+    "sugarPartner": {
+      "acceptSection": {
+        "header": "Accepted request list"
+      },
+      "rejectSection": {
+        "header": "Rejected request list"
+      }
+    }
+  },
+  "notFound": {
+    "header": "404 | This page could not be found."
+  },
+
+  "components": {
+    "links": {
+      "more": "see more"
+    },
+    "list": {
+      "emptyPlaceholder": "List is empty"
+    },
+    "buttons": {
+      "accept": "Accept",
+      "submit": "Submit",
+      "ask_again": "Ask again :(",
+      "decline": "Decline",
+      "new_request": "Make new request!",
+      "buy": "Buy it!",
+      "still_buy": "Still buy!"
+    },
+    "navigation": {
+      "dashboard": "Dashboard",
+      "transactions": "Transactions",
+      "requests": "Requests"
+    }
+  }
+}
