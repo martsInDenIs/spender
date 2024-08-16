@@ -1,16 +1,13 @@
-import { baseFetch } from "@/lib/helpers";
+import { baseFetch, formatParams } from "@/lib/helpers";
 import { GetRequestsParams, Request } from "./type";
 
 export async function getRequests(
   params?: GetRequestsParams
 ): Promise<Request[] | null> {
   try {
-    const requests = await baseFetch(
-      `/requests${params?.conditions ? `?${params?.conditions}` : ""}`,
-      {
-        next: { tags: ["requests"] },
-      }
-    );
+    const requests = await baseFetch(`/requests${formatParams(params)}`, {
+      next: { tags: ["requests"] },
+    });
 
     /** Checking, does the entity exists */
     const jsonRequests = await requests.json();

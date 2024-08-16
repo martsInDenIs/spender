@@ -3,11 +3,12 @@ import List from '@/components/common/List';
 import Transaction from '@/components/dashboard/Transaction';
 import { getTransactions } from '@/lib/api/transactions/api';
 import { getTranslations } from 'next-intl/server';
+import { TransactionRelations } from '@/lib/api/transactions/types';
 
 export default async function Page() {
     const t = await getTranslations('transactions');
 
-    const transactions = await getTransactions();
+    const transactions = await getTransactions({ relations: [TransactionRelations.REQUEST] });
 
     return <section className='text-white flex flex-col items-center justify-center w-full h-full'>
         <div className='w-full mb-5 text-black'>

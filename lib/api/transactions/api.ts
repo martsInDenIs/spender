@@ -1,11 +1,16 @@
-import { baseFetch } from "@/lib/helpers";
-import { Transaction } from "./types";
+import { baseFetch, formatParams } from "@/lib/helpers";
+import { GetTransactionParams, Transaction } from "./types";
 
-export async function getTransactions(): Promise<Transaction[] | null> {
+export async function getTransactions(
+  params: GetTransactionParams = {}
+): Promise<Transaction[] | null> {
   try {
-    const data = await baseFetch("/transactions", {
-      next: { tags: ["transactions"] },
-    });
+    const data = await baseFetch(
+      `/transactions${formatParams(params)}`,
+      {
+        next: { tags: ["transactions"] },
+      }
+    );
 
     /** Checkig, does transactions entity exists or not */
     const jsonData = await data.json();

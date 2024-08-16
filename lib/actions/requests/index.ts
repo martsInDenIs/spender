@@ -14,16 +14,10 @@ export async function executeRequest(requestId: string) {
     return;
   }
 
-  /** TODO: Check types that json-server convert payload (with no reason payload in string, id in number)  */
-  await createTransaction({
-    description: request.description,
-    price: request.price,
-  });
+  await createTransaction({ requestId });
 
-  await updateRequest(requestId, { executed: true });
-
-  revalidatePath('/dashboard');
-  revalidateTag('transactions');
+  revalidatePath("/dashboard");
+  revalidateTag("transactions");
 
   return true;
 }
@@ -32,7 +26,7 @@ export async function updateRequest(
   requestId: string,
   payload: Partial<Request>
 ) {
-  const result = await baseFetch(`/requests/${requestId}`, {
+  await baseFetch(`/requests/update/${requestId}`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
@@ -41,27 +35,18 @@ export async function updateRequest(
   });
 
   revalidateTag("requests");
-
-  return result.json();
 }
 
 export async function createRequest(
   payload: Pick<Request, "description" | "price">
-): Promise<Request> {
-  const result = await baseFetch(`/requests`, {
+): Promise<void> {
+  await baseFetch(`/requests/new`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      ...payload,
-      allowed: false,
-      decided: false,
-      executed: false,
-    }),
+    body: JSON.stringify(payload),
   });
 
   revalidateTag("requests");
-
-  return result.json();
 }

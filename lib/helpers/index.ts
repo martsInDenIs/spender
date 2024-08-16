@@ -12,3 +12,21 @@ export const baseFetch = (
     options
   );
 };
+
+export function formatParams(params: Record<string, unknown> | undefined) {
+  const paramsString = params
+    ? Object.entries(params).map(([key, value]) => {
+        if (value === undefined || value === null || value === "") {
+          return "";
+        }
+
+        if (Array.isArray(value)) {
+          return value.map((el) => `${key}[]=${el}`).join("&");
+        }
+
+        return `${key}=${value}`;
+      }).join('&')
+    : "";
+
+  return paramsString.length ? `?${paramsString}` : "";
+}

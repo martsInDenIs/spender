@@ -6,7 +6,7 @@ import { getTranslations } from "next-intl/server";
 export default async function Page() {
     const t = await getTranslations();
 
-    const requests = await getRequests({ conditions: "decided=false" });
+    const requests = await getRequests({ decided: false });
 
     return <section className='bg-4 h-full rounded-md text-white p-4 pt-10 flex flex-col gap-4 flex-1'>
         <div>

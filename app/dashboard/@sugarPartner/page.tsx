@@ -5,12 +5,13 @@ import CreateRequest from '@/components/dashboard/CreateRequest';
 import AcceptedRequest from '@/components/dashboard/Request/AcceptedRequest';
 import RejectedRequest from '@/components/dashboard/Request/RejectedRequest';
 import { getTranslations } from 'next-intl/server';
+import { PARTNERS_REQUEST_OPTIONS } from '@/lib/constants';
 
 export default async function Page() {
     const t = await getTranslations();
 
-    const acceptedRequests = await getRequests({ conditions: 'decided=true&allowed=true&executed=false' });
-    const rejectedRequests = await getRequests({ conditions: 'decided=true&allowed=false&executed=false' });
+    const acceptedRequests = await getRequests({ ...PARTNERS_REQUEST_OPTIONS, allowed: true });
+    const rejectedRequests = await getRequests({ ...PARTNERS_REQUEST_OPTIONS, allowed: false });
 
     return <div className='flex flex-col h-full gap-3'>
         <section className='bg-4 h-40 rounded-md text-white p-4 flex flex-col gap-4 flex-1'>

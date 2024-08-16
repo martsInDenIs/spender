@@ -8,6 +8,4 @@ export interface Request {
   executed: boolean;
 }
 
-export interface GetRequestsParams {
-  conditions?: string;
-}
+export type GetRequestsParams = Record<string, unknown>;
