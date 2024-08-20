@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { oswald } from "@/app/fonts";
 import "./globals.css";
-import { cookies } from "next/headers";
 import { PropsWithChildren } from "react";
 import PageWrapper from "@/components/common/PageWrapper";
 import { getLocale, getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { hasRole } from "@/lib/services/role";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,13 +18,13 @@ export default async function RootLayout({
   const lang = await getLocale();
   const messages = await getMessages();
 
-  const hasRole = cookies().has('role');
+  const doesRoleExist = hasRole();
 
   return (
     <html className="w-full h-full" lang={lang}>
       <body className={`bg-1 p-4 h-full relative ${oswald.className}`}>
         <NextIntlClientProvider messages={messages}>
-          {hasRole ? <PageWrapper>{children}</PageWrapper> : children}
+          {doesRoleExist ? <PageWrapper>{children}</PageWrapper> : children}
         </NextIntlClientProvider>
       </body>
     </html>

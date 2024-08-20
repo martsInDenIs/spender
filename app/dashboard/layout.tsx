@@ -1,6 +1,7 @@
 import { PropsWithChildren, ReactNode } from "react"
 import { cookies } from "next/headers";
-import { ROLE } from "@/app/types";
+import { getRole } from "@/lib/services/role";
+import { ROLES } from "@/lib/services/role/constants";
 
 type Props = PropsWithChildren<{
     modal: ReactNode,
@@ -9,12 +10,14 @@ type Props = PropsWithChildren<{
 }>
 
 export default function Layout({ children, sugarDM, sugarPartner, modal }: Props) {
-    const role = cookies().get('role');
+    const role = getRole();
+
+    console.log('role', role);
 
     return <>
         <div className='flex flex-row gap-5 flex-1'>
             {children}
-            {role && role.value === ROLE.CHILD ? sugarPartner : sugarDM}
+            {role && role === ROLES.CHILD ? sugarPartner : sugarDM}
         </div>
 
         {modal}

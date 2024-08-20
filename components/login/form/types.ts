@@ -1,5 +1,5 @@
-import { ROLE } from "@/app/types";
+import { ROLE_NAMES } from "@/lib/services/role/constants";
 
 export type FormFields = {
-    role: ROLE | null;
-}
+  role: ROLE_NAMES | null;
+};

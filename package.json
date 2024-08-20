@@ -13,15 +13,18 @@
     "classnames": "^2.5.1",
     "country-flag-icons": "^1.5.13",
     "json-server": "^0.17.4",
+    "jsonwebtoken": "^9.0.2",
     "material-icons": "^1.13.12",
     "next": "14.2.3",
     "next-intl": "^3.15.5",
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.51.4",
-    "react-select": "^5.8.0"
+    "react-select": "^5.8.0",
+    "server-only": "^0.0.1"
   },
   "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
